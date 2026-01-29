@@ -21,54 +21,235 @@
     <a href="ai-mode.html" class="results-ai-mode-link">AI 模式</a>
   </header>
   <main class="results-main">
-    <div class="stats">About 10 results</div>
-    <div class="ai-overview">
-      <div class="label">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        AI Overview
+    <div class="stats" id="statsText">About 10 results</div>
+
+    <!-- 賽馬博物館在哪裏？ -->
+    <div class="query-block" id="query-racing-museum">
+      <div class="ai-overview">
+        <div class="label">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          AI Overview
+        </div>
+        <div class="content">
+          香港賽馬博物館位於跑馬地馬場的快活看台二樓 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener" class="ai-citation" title="香港賽馬博物館- The Hong Kong Racing Museum">[2]</a></sup>。博物館展示了香港超過 170 年的賽馬歷史，並且免費入場 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener" class="ai-citation">[2]</a></sup>。以下是前往博物館的詳細資訊：<br><br>
+          <strong>位置及開放時間</strong><br>
+          地址：香港島跑馬地黃泥涌道，位於快活看台二樓 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。<br><br>
+          開放時間：星期一至星期日：中午 12 時至下午 6 時；夜間賽馬或黃昏賽馬日：中午 12 時至晚上 9 時 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。請注意：開放時間可能會因特別安排或賽馬日而有所調整，建議出發前查看香港賽馬會官方網站。<br><br>
+          入場費：免費 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。<br><br>
+          導賞服務：本館另提供免費導賞服務，每天下午 2 時 30 分開始，約 30 分鐘 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener" class="ai-citation">[3]</a></sup>。
+        </div>
+        <div class="ai-overview-deep-dive">
+          <a href="ai-mode.html?q=racing-museum" class="ai-mode-deep-dive-btn">使用AI模式深入探討</a>
+        </div>
+        <div class="ai-overview-citations">
+          <div class="ai-overview-citations-label"><svg class="ai-citation-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>Sources</div>
+          <ul class="ai-overview-citations-list">
+            <li><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[1]</span> 參觀資料- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></li>
+            <li><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[2]</span> 香港賽馬博物館- The Hong Kong Racing Museum - 馬會知多少- 香港賽馬會</a></li>
+            <li><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[3]</span> 團體導賞服務- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="content">
-        香港賽馬博物館位於跑馬地馬場的快活看台二樓 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener" class="ai-citation" title="香港賽馬博物館- The Hong Kong Racing Museum">[2]</a></sup>。博物館展示了香港超過 170 年的賽馬歷史，並且免費入場 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener" class="ai-citation">[2]</a></sup>。以下是前往博物館的詳細資訊：<br><br>
-        <strong>位置及開放時間</strong><br>
-        地址：香港島跑馬地黃泥涌道，位於快活看台二樓 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。<br><br>
-        開放時間：星期一至星期日：中午 12 時至下午 6 時；夜間賽馬或黃昏賽馬日：中午 12 時至晚上 9 時 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。請注意：開放時間可能會因特別安排或賽馬日而有所調整，建議出發前查看香港賽馬會官方網站。<br><br>
-        入場費：免費 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。<br><br>
-        導賞服務：本館另提供免費導賞服務，每天下午 2 時 30 分開始，約 30 分鐘 <sup><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener" class="ai-citation">[3]</a></sup>。
-      </div>
-      <div class="ai-overview-deep-dive">
-        <a href="ai-mode.html" class="ai-mode-deep-dive-btn">使用AI模式深入探討</a>
-      </div>
-      <div class="ai-overview-citations">
-        <div class="ai-overview-citations-label"><svg class="ai-citation-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>Sources</div>
-        <ul class="ai-overview-citations-list">
-          <li><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[1]</span> 參觀資料- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></li>
-          <li><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[2]</span> 香港賽馬博物館- The Hong Kong Racing Museum - 馬會知多少- 香港賽馬會</a></li>
-          <li><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[3]</span> 團體導賞服務- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></li>
-        </ul>
+      <div class="results-list">
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../plan-your-visit.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener">參觀資料- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">參觀資料 · 開放時間︰博物館 星期一至星期日：中午12時至晚上6時；賽馬日（夜馬及黃昏馬）：中午12時至晚上9時 · 入場費︰免費 · 聯絡我們︰電話︰(852) 2966 8065 · 地址︰。</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../the-hong-kong-racing-museum.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener">香港賽馬博物館- The Hong Kong Racing Museum - 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">香港賽馬博物館坐落跑馬地馬場，讓訪客細味香港賽馬170多年來的輝煌歷史，並展現這項本地主要觀賞體育運動對社會及經濟發展的重大貢獻。</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../group-tour.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener">團體導賞服務- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">導賞服務. 本館為參觀人士提供免費導賞服務。時間. 每天下午2時30分，導賞時間約為30分鐘。服務詳情. 導賞服務無需預約，請於導賞開始前10分鐘到博物館接待處集合，名額10人。</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://member.hkjc.com/member/chinese/about-membership/racecourses-facilities-guide/happy-valley-racecourse.aspx" target="_blank" rel="noopener">https://member.hkjc.com/.../happy-valley-racecourse.aspx</a></div>
+          <div class="title"><a href="https://member.hkjc.com/member/chinese/about-membership/racecourses-facilities-guide/happy-valley-racecourse.aspx" target="_blank" rel="noopener">跑馬地馬場- 馬場設施導覽- 馬會會員- 香港賽馬會</a></div>
+          <div class="snippet">入口 A. 馬房大樓 · 賽馬博物館 · 滿貫廳 · 入口 B 快活看台 · 入口 C 聯合看台 · 入口 D 會員看台第三座 · 入口 E 會員看台第一座，會員看台第二座及會員正門入口 · 入口 F。</div>
+        </div>
       </div>
     </div>
-    <div id="resultsList">
-      <div class="result-item">
-        <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../plan-your-visit.aspx</a></div>
-        <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener">參觀資料- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></div>
-        <div class="snippet">參觀資料 · 開放時間︰博物館 星期一至星期日：中午12時至晚上6時；賽馬日（夜馬及黃昏馬）：中午12時至晚上9時 · 入場費︰免費 · 聯絡我們︰電話︰(852) 2966 8065 · 地址︰。</div>
+
+    <!-- 賽馬博物館（簡單版本） -->
+    <div class="query-block" id="query-racing-museum-simple" style="display:none">
+      <div class="results-list">
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../plan-your-visit.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/plan-your-visit.aspx" target="_blank" rel="noopener">參觀資料- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">參觀資料 · 開放時間︰博物館 星期一至星期日：中午12時至晚上6時；賽馬日（夜馬及黃昏馬）：中午12時至晚上9時 · 入場費︰免費 · 聯絡我們︰電話︰(852) 2966 8065 · 地址︰。</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../the-hong-kong-racing-museum.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener">香港賽馬博物館- The Hong Kong Racing Museum - 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">香港賽馬博物館坐落跑馬地馬場，讓訪客細味香港賽馬170多年來的輝煌歷史，並展現這項本地主要觀賞體育運動對社會及經濟發展的重大貢獻。</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../group-tour.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener">團體導賞服務- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">導賞服務. 本館為參觀人士提供免費導賞服務。時間. 每天下午2時30分，導賞時間約為30分鐘。服務詳情. 導賞服務無需預約，請於導賞開始前10分鐘到博物館接待處集合，名額10人。</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://member.hkjc.com/member/chinese/about-membership/racecourses-facilities-guide/happy-valley-racecourse.aspx" target="_blank" rel="noopener">https://member.hkjc.com/.../happy-valley-racecourse.aspx</a></div>
+          <div class="title"><a href="https://member.hkjc.com/member/chinese/about-membership/racecourses-facilities-guide/happy-valley-racecourse.aspx" target="_blank" rel="noopener">跑馬地馬場- 馬場設施導覽- 馬會會員- 香港賽馬會</a></div>
+          <div class="snippet">入口 A. 馬房大樓 · 賽馬博物館 · 滿貫廳 · 入口 B 快活看台 · 入口 C 聯合看台 · 入口 D 會員看台第三座 · 入口 E 會員看台第一座，會員看台第二座及會員正門入口 · 入口 F。</div>
+        </div>
       </div>
-      <div class="result-item">
-        <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../the-hong-kong-racing-museum.aspx</a></div>
-        <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/the-hong-kong-racing-museum.aspx" target="_blank" rel="noopener">香港賽馬博物館- The Hong Kong Racing Museum - 馬會知多少- 香港賽馬會</a></div>
-        <div class="snippet">香港賽馬博物館坐落跑馬地馬場，讓訪客細味香港賽馬170多年來的輝煌歷史，並展現這項本地主要觀賞體育運動對社會及經濟發展的重大貢獻。</div>
+    </div>
+
+    <!-- 沙田馬場 -->
+    <div class="query-block" id="query-sha-tin-racecourse" style="display:none">
+      <div class="results-list">
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/zh-hk/hospitality-venues/sha-tin-racecourse" target="_blank" rel="noopener">https://entertainment.hkjc.com/.../sha-tin-racecourse</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/zh-hk/hospitality-venues/sha-tin-racecourse" target="_blank" rel="noopener">沙田馬場- 馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">沙田馬場於1978年落成啟用，除了是主要的日馬賽事場地，每年也舉行多項國際賽事及大型賽馬活動，是世界頂級的賽馬場地之一。場內亦提供多個特色場地，讓你可以一邊…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/zh-hk/visit-us/sha-tin-racecourse" target="_blank" rel="noopener">https://entertainment.hkjc.com/.../visit-us/sha-tin-racecourse</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/zh-hk/visit-us/sha-tin-racecourse" target="_blank" rel="noopener">計劃行程- 沙田馬場- 馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">公眾席. 使用八達通繳付HK$10入場費，即可經公眾席入口進入馬場公眾席範圍，包括公眾席看台、投注大堂及部份餐廳，另行收費場所除外。 一般開放時間為首場賽事開跑前2小時至尾…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/" target="_blank" rel="noopener">https://entertainment.hkjc.com/</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/" target="_blank" rel="noopener">馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">作為世界級賽馬活動的集中地，沙田馬場是多項一級賽事及大型賽馬盛事的舉行場地，主要於週末及假期上演日間賽事，為大家帶來緊張刺激的賽馬運動及獨特的主題體驗，不論港人或…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/hospitality-venues/sha-tin-racecourse/venue-details?id=Genso" target="_blank" rel="noopener">https://entertainment.hkjc.com/.../venue-details?id=Genso</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/hospitality-venues/sha-tin-racecourse/venue-details?id=Genso" target="_blank" rel="noopener">天馬驛- 沙田馬場- 馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">「天馬驛」是香港首個四層高的數碼賽馬體驗地標，融合現場賽馬的刺激感及嶄新的數碼科技，提供前所未有的賽馬運動及娛樂體驗。您更可發掘多次元世界，盡情投入革新性馬場體驗…</div>
+        </div>
       </div>
-      <div class="result-item">
-        <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../group-tour.aspx</a></div>
-        <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/history-and-reports/group-tour.aspx" target="_blank" rel="noopener">團體導賞服務- 香港賽馬博物館- 馬會知多少- 香港賽馬會</a></div>
-        <div class="snippet">導賞服務. 本館為參觀人士提供免費導賞服務。時間. 每天下午2時30分，導賞時間約為30分鐘。</div>
+    </div>
+
+    <!-- 沙田馬場怎麽去 -->
+    <div class="query-block" id="query-sha-tin-how-to-get" style="display:none">
+      <div class="ai-overview">
+        <div class="label">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          AI Overview
+        </div>
+        <div class="content">
+          前往沙田馬場（地址：新界沙田區火炭大埔公路沙田段 6001 號 <sup><a href="https://entertainment.hkjc.com/zh-hk/hospitality-venues/sha-tin-racecourse" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>）共有以下四種交通方式：<br><br>
+          港鐵：可搭乘東鐵綫抵達。<br><br>
+          的士：直接乘搭的士前往。<br><br>
+          巴士及小巴：利用相關巴士或專線小巴路線。<br><br>
+          自駕：場內設有公眾停車場及會員停車場（後者僅供會員及其來賓使用）。<br><br>
+          請注意：賽事通常於週末及公眾假期舉行 <sup><a href="https://entertainment.hkjc.com/" target="_blank" rel="noopener" class="ai-citation">[3]</a></sup>，入場時間為首場開跑前 2 小時 <sup><a href="https://entertainment.hkjc.com/zh-hk/visit-us/sha-tin-racecourse" target="_blank" rel="noopener" class="ai-citation">[2]</a></sup>。
+        </div>
+        <div class="ai-overview-deep-dive">
+          <a href="ai-mode.html?q=sha-tin-how-to-get" class="ai-mode-deep-dive-btn">使用AI模式深入探討</a>
+        </div>
+        <div class="ai-overview-citations">
+          <div class="ai-overview-citations-label"><svg class="ai-citation-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>Sources</div>
+          <ul class="ai-overview-citations-list">
+            <li><a href="https://entertainment.hkjc.com/zh-hk/hospitality-venues/sha-tin-racecourse" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[1]</span> 沙田馬場- 馬場活動- 香港賽馬會</a></li>
+            <li><a href="https://entertainment.hkjc.com/zh-hk/visit-us/sha-tin-racecourse" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[2]</span> 計劃行程- 沙田馬場- 馬場活動- 香港賽馬會</a></li>
+            <li><a href="https://entertainment.hkjc.com/" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[3]</span> 馬場活動- 香港賽馬會</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="result-item">
-        <div class="url"><a href="https://member.hkjc.com/member/chinese/about-membership/racecourses-facilities-guide/happy-valley-racecourse.aspx" target="_blank" rel="noopener">https://member.hkjc.com/.../happy-valley-racecourse.aspx</a></div>
-        <div class="title"><a href="https://member.hkjc.com/member/chinese/about-membership/racecourses-facilities-guide/happy-valley-racecourse.aspx" target="_blank" rel="noopener">跑馬地馬場- 馬場設施導覽- 馬會會員- 香港賽馬會</a></div>
-        <div class="snippet">入口 A. 馬房大樓 · 賽馬博物館 · 滿貫廳 · 入口 B 快活看台 · 入口 C 聯合看台 · 入口 D 會員看台第三座。</div>
+      <div class="results-list">
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/zh-hk/hospitality-venues/sha-tin-racecourse" target="_blank" rel="noopener">https://entertainment.hkjc.com/.../sha-tin-racecourse</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/zh-hk/hospitality-venues/sha-tin-racecourse" target="_blank" rel="noopener">沙田馬場- 馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">沙田馬場於1978年落成啟用，除了是主要的日馬賽事場地，每年也舉行多項國際賽事及大型賽馬活動，是世界頂級的賽馬場地之一。場內亦提供多個特色場地，讓你可以一邊…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/zh-hk/visit-us/sha-tin-racecourse" target="_blank" rel="noopener">https://entertainment.hkjc.com/.../visit-us/sha-tin-racecourse</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/zh-hk/visit-us/sha-tin-racecourse" target="_blank" rel="noopener">計劃行程- 沙田馬場- 馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">公眾席. 使用八達通繳付HK$10入場費，即可經公眾席入口進入馬場公眾席範圍，包括公眾席看台、投注大堂及部份餐廳，另行收費場所除外。 一般開放時間為首場賽事開跑前2小時至尾…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/" target="_blank" rel="noopener">https://entertainment.hkjc.com/</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/" target="_blank" rel="noopener">馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">作為世界級賽馬活動的集中地，沙田馬場是多項一級賽事及大型賽馬盛事的舉行場地，主要於週末及假期上演日間賽事，為大家帶來緊張刺激的賽馬運動及獨特的主題體驗，不論港人或…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://entertainment.hkjc.com/hospitality-venues/sha-tin-racecourse/venue-details?id=Genso" target="_blank" rel="noopener">https://entertainment.hkjc.com/.../venue-details?id=Genso</a></div>
+          <div class="title"><a href="https://entertainment.hkjc.com/hospitality-venues/sha-tin-racecourse/venue-details?id=Genso" target="_blank" rel="noopener">天馬驛- 沙田馬場- 馬場活動- 香港賽馬會</a></div>
+          <div class="snippet">「天馬驛」是香港首個四層高的數碼賽馬體驗地標，融合現場賽馬的刺激感及嶄新的數碼科技，提供前所未有的賽馬運動及娛樂體驗。您更可發掘多次元世界，盡情投入革新性馬場體驗…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 行政總裁 -->
+    <div class="query-block" id="query-ceo" style="display:none">
+      <div class="ai-overview">
+        <div class="label">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          AI Overview
+        </div>
+        <div class="content">
+          應家柏先生 GBS JP<br><br>
+          應家柏先生於 1998 年加入香港賽馬會，並自 2007 年 2 月起出任行政總裁，領導馬會推行重要改革，發展成為世界級賽馬機構，而馬會慈善信託基金亦成為位居世界前列的慈善捐助機構 <sup><a href="https://corporate.hkjc.com/corporate/chinese/who-we-are/ceo.aspx" target="_blank" rel="noopener" class="ai-citation">[1]</a></sup>。
+        </div>
+        <div class="ai-overview-deep-dive">
+          <a href="ai-mode.html?q=ceo" class="ai-mode-deep-dive-btn">使用AI模式深入探討</a>
+        </div>
+        <div class="ai-overview-citations">
+          <div class="ai-overview-citations-label"><svg class="ai-citation-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>Sources</div>
+          <ul class="ai-overview-citations-list">
+            <li><a href="https://corporate.hkjc.com/corporate/chinese/who-we-are/ceo.aspx" target="_blank" rel="noopener" class="ai-citation-link"><span class="ai-citation-num">[1]</span> 行政總裁- 行政架構- 馬會知多少- 香港賽馬會</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="results-list">
+        <div class="result-item">
+          <div class="url"><a href="https://corporate.hkjc.com/corporate/chinese/who-we-are/ceo.aspx" target="_blank" rel="noopener">https://corporate.hkjc.com/.../who-we-are/ceo.aspx</a></div>
+          <div class="title"><a href="https://corporate.hkjc.com/corporate/chinese/who-we-are/ceo.aspx" target="_blank" rel="noopener">行政總裁- 行政架構- 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">行政總裁應家柏先生GBS JP. 應家柏先生於1998年加入香港賽馬會，並自2007年2月起出任行政總裁，領導馬會推行重要改革，發展成為世界級賽馬機構，而馬會慈善信託基金亦成為位居…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://racingnews.hkjc.com/chinese/2025/08/17/" target="_blank" rel="noopener">https://racingnews.hkjc.com/chinese/2025/08/17/</a></div>
+          <div class="title"><a href="https://racingnews.hkjc.com/chinese/2025/08/17/" target="_blank" rel="noopener">馬會行政總裁應家柏在多維爾頒發兩項香港賽馬會錦標賽事獎盃圖輯 - 賽馬新聞</a></div>
+          <div class="snippet">Aug 17, 2025 ... 香港賽馬會行政總裁應家柏於8月16日(星期六)，在法國多維爾馬場主持兩場以香港賽馬會命名的錦標賽事之頒獎儀式。由費伯華訓練的「先睹風采」摘下香港…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://www.hkjc.com/chinese/corporate/ce/ce_biography.asp" target="_blank" rel="noopener">https://www.hkjc.com/.../ce_biography.asp</a></div>
+          <div class="title"><a href="https://www.hkjc.com/chinese/corporate/ce/ce_biography.asp" target="_blank" rel="noopener">應家柏簡歷- 香港賽馬會行政總裁</a></div>
+          <div class="snippet">應家柏先生於2007年2月出任香港賽馬會行政總裁。國際上，他擔任「亞洲賽馬聯盟」主席，該聯盟由二十個賽馬管理機構組成，同時亦出任世界馬壇最高權威機構「國際賽馬組織聯盟」…</div>
+        </div>
+        <div class="result-item">
+          <div class="url"><a href="https://ceoblog.hkjc.com/zh/" target="_blank" rel="noopener">https://ceoblog.hkjc.com/zh/</a></div>
+          <div class="title"><a href="https://ceoblog.hkjc.com/zh/" target="_blank" rel="noopener">應家柏網誌- 行政架構- 馬會知多少- 香港賽馬會</a></div>
+          <div class="snippet">公司簡介 · 宗旨與核心價值 · 行政架構 · 董事局 · 管理委員會 · 行政總裁 · 應家柏網誌 · 賽馬及馬場娛樂 · 賽馬發展願景2030 · 世界級賽事 · 香港賽駒揚威海外 · 星級團隊…</div>
+        </div>
       </div>
     </div>
   </main>
 </body>
+
+<script>
+  (function () {
+    var select = document.querySelector('select[name="q"]');
+    var blocks = document.querySelectorAll('.query-block');
+
+    // Read URL parameter
+    var params = new URLSearchParams(window.location.search);
+    var queryParam = params.get('q') || 'racing-museum';
+
+    function updateVisible() {
+      var value = select && select.value ? select.value : queryParam;
+      for (var i = 0; i < blocks.length; i++) {
+        var b = blocks[i];
+        b.style.display = (b.id === 'query-' + value) ? 'block' : 'none';
+      }
+    }
+
+    if (select) {
+      // Set dropdown to match URL parameter
+      select.value = queryParam;
+      
+      select.addEventListener('change', function () {
+        updateVisible();
+      });
+      updateVisible();
+    }
+  })();
+</script>
 </html>
