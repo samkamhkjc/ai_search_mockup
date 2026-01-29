@@ -1,7 +1,6 @@
-/* AI Search POC - HKJC-inspired palette (blue & yellow) */
+/* AI Search POC - HKJC-inspired palette (blue & yellow) - static demo */
 
 :root {
-  /* HKJC-style: blue & yellow */
   --hkjc-blue: #003d79;
   --hkjc-blue-light: #0054a4;
   --hkjc-blue-muted: #e8f0f8;
@@ -33,7 +32,6 @@ body {
   background: var(--bg);
 }
 
-/* ---- Search home (index) ---- */
 .search-home {
   min-height: 100vh;
   display: flex;
@@ -123,7 +121,6 @@ body {
   border-color: var(--hkjc-blue-light);
 }
 
-/* ---- Results page ---- */
 .results-header {
   padding: 1.25rem 1.5rem 0.75rem;
   border-bottom: 1px solid var(--border);
@@ -206,7 +203,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* AI Overview block (RAG-style) */
 .ai-overview {
   background: var(--ai-bg);
   border: 1px solid var(--ai-border);
@@ -326,7 +322,6 @@ body {
   font-weight: 600;
 }
 
-/* Result items */
 .result-item {
   margin-bottom: 1.75rem;
 }
@@ -368,20 +363,6 @@ body {
   color: var(--text);
 }
 
-.error-msg {
-  color: #d93025;
-  padding: 1rem;
-  background: #fce8e6;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-.loading {
-  color: var(--text-secondary);
-  padding: 2rem;
-  text-align: center;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -394,7 +375,6 @@ body {
   border: 0;
 }
 
-/* ---- AI Mode page (Google AI–style) ---- */
 .ai-mode-page {
   min-height: 100vh;
   display: flex;
@@ -442,7 +422,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* 查詢：淺灰圓角氣泡（參考圖） */
 .ai-mode-query-bubble {
   display: inline-block;
   max-width: 100%;
@@ -494,7 +473,6 @@ body {
   margin-top: 0;
 }
 
-/* 內文中的引用：小灰圓角膠囊（參考圖 Rome2Rio、Expedia +4 風格） */
 .ai-mode-response-text .ai-mode-citation-pill {
   display: inline;
   padding: 0.1rem 0.5rem;
@@ -512,7 +490,6 @@ body {
   color: var(--hkjc-blue);
 }
 
-/* 右欄：來源區 */
 .ai-mode-citations-sidebar {
   position: sticky;
   top: 1rem;
@@ -559,7 +536,6 @@ body {
   color: var(--text);
 }
 
-/* 來源卡片（參考圖：標題、描述、圖示、縮圖、來源名、三點選單） */
 .ai-mode-citations-cards {
   display: flex;
   flex-direction: column;

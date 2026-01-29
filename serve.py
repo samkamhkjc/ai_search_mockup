@@ -18,6 +18,11 @@ def results():
     return send_from_directory(ROOT, "results.html")
 
 
+@app.route("/ai-mode.html")
+def ai_mode():
+    return send_from_directory(ROOT, "ai-mode.html")
+
+
 @app.route("/data/<path:filename>")
 def data(filename):
     return send_from_directory(os.path.join(ROOT, "data"), filename)

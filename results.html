@@ -15,6 +15,7 @@
         <!-- populated by JS -->
       </select>
     </form>
+    <a href="ai-mode.html" class="results-ai-mode-link">AI 模式</a>
   </header>
   <main class="results-main">
     <div id="loading" class="loading">Loading results...</div>
@@ -27,6 +28,9 @@
           AI Overview
         </div>
         <div class="content" id="aiOverviewContent"></div>
+        <div id="aiOverviewDeepDive" class="ai-overview-deep-dive" style="display:none;">
+          <a href="#" id="aiModeLink" class="ai-mode-deep-dive-btn">使用AI模式深入探討</a>
+        </div>
         <div id="aiOverviewCitations" class="ai-overview-citations"></div>
       </div>
       <div id="resultsList"></div>
@@ -44,6 +48,8 @@
       var stats = document.getElementById('stats');
       var aiBlock = document.getElementById('aiOverviewBlock');
       var aiContent = document.getElementById('aiOverviewContent');
+      var aiOverviewDeepDive = document.getElementById('aiOverviewDeepDive');
+      var aiModeLink = document.getElementById('aiModeLink');
       var aiOverviewCitations = document.getElementById('aiOverviewCitations');
       var resultsList = document.getElementById('resultsList');
       var form = document.getElementById('searchForm');
@@ -70,6 +76,8 @@
 
         if (hasAi) {
           aiBlock.style.display = 'block';
+          aiOverviewDeepDive.style.display = 'block';
+          aiModeLink.href = 'ai-mode.html?q=' + encodeURIComponent(q);
           var safe = data.aiOverview.split('\n').map(function (p) { return esc(p); }).join('<br>');
           var withCitations = safe.replace(/\[(\d+)\]/g, function(_, n) {
             var idx = parseInt(n, 10) - 1;
@@ -102,6 +110,7 @@
           }
         } else {
           aiBlock.style.display = 'none';
+          if (aiOverviewDeepDive) aiOverviewDeepDive.style.display = 'none';
           aiOverviewCitations.innerHTML = '';
         }
 
