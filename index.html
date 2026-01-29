@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Search POC</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="search-home">
+    <div class="logo">AI Search POC</div>
+    <form class="search-form" id="searchForm" action="results.html" method="get">
+      <div class="input-row">
+        <select name="q" id="querySelect" required aria-label="Select a search query">
+          <option value="">Choose a search query...</option>
+          <!-- populated by JS from JSON -->
+        </select>
+      </div>
+      <div class="btn-row">
+        <button type="submit" class="primary">Demo Search</button>
+      </div>
+    </form>
+  </main>
+  <script src="js/app.js"></script>
+  <script>
+    (function initHome() {
+      const select = document.getElementById('querySelect');
+
+      loadDemoData().then(function(data) {
+        if (!data || !data.queryOptions) return;
+        data.queryOptions.forEach(function(opt) {
+          var o = document.createElement('option');
+          o.value = opt.id;
+          o.textContent = opt.label;
+          select.appendChild(o);
+        });
+      }).catch(function() {
+        // Fallback if JSON fails (e.g. file protocol)
+        var fallbacks = [
+          { id: 'python-tutorial', label: 'Python tutorial for beginners' },
+          { id: 'machine-learning', label: 'What is machine learning?' },
+          { id: 'rag-explained', label: 'What is RAG in AI?' }
+        ];
+        fallbacks.forEach(function(opt) {
+          var o = document.createElement('option');
+          o.value = opt.id;
+          o.textContent = opt.label;
+          select.appendChild(o);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

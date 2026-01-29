@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Query - AI Search POC</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="results-header">
+    <a href="index.html" class="logo-small" aria-label="Go to search home">AI Search POC</a>
+    <form class="search-bar-results" id="searchForm" action="results.html" method="get">
+      <select name="q" id="querySelect" aria-label="Select a search query">
+        <option value="">Choose a query...</option>
+        <!-- populated by JS -->
+      </select>
+    </form>
+  </header>
+  <main class="results-main">
+    <div id="loading" class="loading">Loading results...</div>
+    <div id="error" class="error-msg" style="display:none;"></div>
+    <div id="content" style="display:none;">
+      <div class="stats" id="stats"></div>
+      <div id="aiOverviewBlock" class="ai-overview" style="display:none;">
+        <div class="label">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          AI Overview
+        </div>
+        <div class="content" id="aiOverviewContent"></div>
+        <div id="aiOverviewCitations" class="ai-overview-citations"></div>
+      </div>
+      <div id="resultsList"></div>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+  <script>
+    (function initResults() {
+      var params = new URLSearchParams(location.search);
+      var q = params.get('q');
+
+      var loading = document.getElementById('loading');
+      var err = document.getElementById('error');
+      var content = document.getElementById('content');
+      var stats = document.getElementById('stats');
+      var aiBlock = document.getElementById('aiOverviewBlock');
+      var aiContent = document.getElementById('aiOverviewContent');
+      var aiOverviewCitations = document.getElementById('aiOverviewCitations');
+      var resultsList = document.getElementById('resultsList');
+      var form = document.getElementById('searchForm');
+      var select = document.getElementById('querySelect');
+
+      function showErr(html) {
+        loading.style.display = 'none';
+        content.style.display = 'none';
+        err.style.display = 'block';
+        err.innerHTML = html;
+      }
+
+      function render(data, queryLabel) {
+        loading.style.display = 'none';
+        err.style.display = 'none';
+        content.style.display = 'block';
+
+        var res = (data.results || []);
+        var hasAi = data.aiOverview && (typeof data.aiOverview === 'string') && data.aiOverview.trim().length > 0;
+
+        document.title = (queryLabel || q) + ' - AI Search POC';
+
+        stats.textContent = 'About ' + res.length + ' results';
+
+        if (hasAi) {
+          aiBlock.style.display = 'block';
+          var safe = data.aiOverview.split('\n').map(function (p) { return esc(p); }).join('<br>');
+          var withCitations = safe.replace(/\[(\d+)\]/g, function(_, n) {
+            var idx = parseInt(n, 10) - 1;
+            if (idx < 0 || !res[idx]) return '[' + n + ']';
+            var r = res[idx];
+            return '<sup><a href="' + esc(r.url) + '" target="_blank" rel="noopener" class="ai-citation" title="' + esc(r.title) + '">[' + n + ']</a></sup>';
+          });
+          aiContent.innerHTML = withCitations;
+          var cited = [];
+          data.aiOverview.replace(/\[(\d+)\]/g, function(_, n) {
+            var i = parseInt(n, 10);
+            if (cited.indexOf(i) === -1) cited.push(i);
+            return _;
+          });
+          cited.sort(function(a, b) { return a - b; });
+          var iconSvg = '<svg class="ai-citation-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>';
+          if (cited.length > 0) {
+            var listHtml = '<div class="ai-overview-citations-label">' + iconSvg + 'Sources</div><ul class="ai-overview-citations-list">';
+            for (var i = 0; i < cited.length; i++) {
+              var n = cited[i];
+              var idx = n - 1;
+              var r = res[idx];
+              if (!r) continue;
+              listHtml += '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener" class="ai-citation-link">' + iconSvg + '<span class="ai-citation-num">[' + n + ']</span> ' + esc(r.title) + '</a></li>';
+            }
+            listHtml += '</ul>';
+            aiOverviewCitations.innerHTML = listHtml;
+          } else {
+            aiOverviewCitations.innerHTML = '';
+          }
+        } else {
+          aiBlock.style.display = 'none';
+          aiOverviewCitations.innerHTML = '';
+        }
+
+        resultsList.innerHTML = '';
+        res.forEach(function(r) {
+          var div = document.createElement('div');
+          div.className = 'result-item';
+          div.innerHTML =
+            '<div class="url"><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + '</a></div>' +
+            '<div class="title"><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title) + '</a></div>' +
+            '<div class="snippet">' + esc(r.snippet) + '</div>';
+          resultsList.appendChild(div);
+        });
+      }
+
+
+      if (!q) {
+        showErr('No query selected. <a href="index.html">Go to search</a>.');
+        return;
+      }
+
+      function esc(s) {
+        if (!s) return '';
+        var d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+      }
+
+      loadDemoData()
+        .then(function(json) {
+          if (!json || !json.data) {
+            showErr('Demo data not found.');
+            return;
+          }
+          var d = json.data[q];
+          if (!d) {
+            showErr('No results for query: ' + esc(q) + '. <a href="index.html">Go to search</a>.');
+            return;
+          }
+          var label = (json.queryOptions || []).filter(function(o) { return o.id === q; })[0];
+          render(d, label ? label.label : q);
+
+          // Populate dropdown
+          (json.queryOptions || []).forEach(function(opt) {
+            var o = document.createElement('option');
+            o.value = opt.id;
+            o.textContent = opt.label;
+            if (opt.id === q) o.selected = true;
+            select.appendChild(o);
+          });
+
+          select.addEventListener('change', function() {
+            if (select.value) form.submit();
+          });
+        })
+        .catch(function() {
+          showErr('Could not load demo data. Serve over HTTP (e.g. <code>python -m http.server 8000</code>). <a href="index.html">Go to search</a>.');
+        });
+    })();
+  </script>
+</body>
+</html>
